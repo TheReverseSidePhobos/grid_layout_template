@@ -1,0 +1,93 @@
+html,
+body {
+  margin: 15px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, minmax(180px, 260px));
+  grid-template-rows: repeat(4, 180px);
+  justify-content: center;
+  grid-template-areas:
+    'one one three four'
+    'two two three four'
+    'five six seven seven'
+    'five six eight eight';
+
+  grid-auto-rows: 200px;
+  @media (max-width: 1210px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 180px);
+    justify-content: center;
+    grid-template-areas:
+      'one one'
+      'two two'
+      'three four'
+      'three four'
+      'five five'
+      'six six'
+      'seven eight'
+      'seven eight';
+  }
+  @media (max-width: 575px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(16, 180px);
+
+    grid-template-areas:
+      'one'
+      'two'
+      'three'
+      'four'
+      'five'
+      'six'
+      'seven'
+      'eight';
+  }
+}
+.one {
+  grid-area: one;
+  background-color: green;
+}
+.two {
+  grid-area: two;
+  background-color: rgb(0, 66, 128);
+}
+.three {
+  grid-area: three;
+  background-color: rgb(77, 0, 128);
+}
+.four {
+  grid-area: four;
+  background-color: rgb(126, 128, 0);
+}
+.five {
+  grid-area: five;
+  background-color: rgb(128, 0, 0);
+}
+.six {
+  grid-area: six;
+  background-color: rgb(128, 0, 53);
+}
+.seven {
+  grid-area: seven;
+  background-color: rgb(5, 1, 8);
+}
+.eight {
+  grid-area: eight;
+  background-color: rgb(0, 128, 75);
+}
+.another {
+  background-color: darkcyan;
+}
